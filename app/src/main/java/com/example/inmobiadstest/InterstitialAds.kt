@@ -26,9 +26,7 @@ class InterstitialAds() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val consent = JSONObject()
-
         try {
-            // Provide correct consent value to sdk which is obtained by User
             consent.put(InMobiSdk.IM_GDPR_CONSENT_AVAILABLE, true)
         } catch (e: JSONException) {
             e.printStackTrace()
@@ -43,14 +41,12 @@ class InterstitialAds() : AppCompatActivity() {
                     } else {
                         mInterstitialAd!!.load()
                     }
-
                 }
             } else {
                 Log.e(TAG, "InMobi SDK Initialization failed: " + error.message)
                 mLoadAdButton!!.setOnClickListener{
                     Toast.makeText(applicationContext, "InMobi SDK is not initialized." +
                             "Check logs for more information", Toast.LENGTH_LONG).show()
-
                 }
             }
         }
@@ -61,6 +57,9 @@ class InterstitialAds() : AppCompatActivity() {
             mInterstitialAd!!.show();
         }
         setupInterstitial();
+        findViewById<Button>(R.id.Button).setOnClickListener{
+            startActivity(Intent(this,NativeAdsView::class.java))
+        }
     }
 
 

@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".nativeAds"></activity>
+        <activity android:name=".NativeAdsView">
+        </activity>
         <activity
             android:name=".InterstitialAds"
             android:hardwareAccelerated="true" />
