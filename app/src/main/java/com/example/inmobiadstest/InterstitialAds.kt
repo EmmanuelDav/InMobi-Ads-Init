@@ -20,7 +20,6 @@ class InterstitialAds() : AppCompatActivity() {
     companion object {
         val TAG: String = javaClass.name
     }
-
     private var mInterstitialAd: InMobiInterstitial? = null
     private var mLoadAdButton: Button? = null
     private var mShowAdButton: Button? = null
@@ -77,9 +76,7 @@ class InterstitialAds() : AppCompatActivity() {
 
     private fun setupInterstitial() {
         mInterstitialAd = InMobiInterstitial(this, 1601880166897, object : InterstitialAdEventListener() {
-
-            override fun onAdLoadSucceeded(inMobiInterstitial: InMobiInterstitial,
-                                           adMetaInfo: AdMetaInfo) {
+            override fun onAdLoadSucceeded(inMobiInterstitial: InMobiInterstitial, adMetaInfo: AdMetaInfo) {
                 Log.d(TAG, "onAdLoadSuccessful with bid " + adMetaInfo.bid)
                 if (inMobiInterstitial.isReady) {
                     if (mShowAdButton != null) {

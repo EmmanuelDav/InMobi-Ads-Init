@@ -22,8 +22,6 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-    private InMobiBanner mBannerAd;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,5 +58,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, InterstitialAds.class));
         });
     }
+
 
 }
